@@ -2,6 +2,7 @@ package pers.hanchao.basiccodeguideline.stream;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * <p>description: 人员</P>
@@ -11,6 +12,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Person {
     private String name;
     private Boolean student;

@@ -139,5 +139,10 @@ public class StreamDemo {
         System.out.println("流转换成Set");
         Set<Person> set = list.stream().collect(Collectors.toSet());
         set.stream().forEach(System.out::println);
+
+        //关于null值和空数组
+        System.out.println("关于null值和空数组");
+        Stream.of(null).forEach(System.out::println);
+        Stream.of(Arrays.asList()).forEach(System.out::println);
     }
 }
