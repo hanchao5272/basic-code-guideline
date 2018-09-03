@@ -144,5 +144,9 @@ public class StreamDemo {
         System.out.println("关于null值和空数组");
         Stream.of(null).forEach(System.out::println);
         Stream.of(Arrays.asList()).forEach(System.out::println);
+
+        //split空值过滤
+        List<Integer> statusList = Stream.of("1,2,3,,,2,,".split(",")).filter(s -> !s.equals("")).distinct().map(Integer::parseInt).collect(Collectors.toList());
+        System.out.println(statusList);
     }
 }

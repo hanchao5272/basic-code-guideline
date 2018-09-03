@@ -10,10 +10,10 @@ import lombok.*;
  */
 //@EqualsAndHashCode(exclude = {"name","age"})
 //@ToString(exclude = {"id", "name"})
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Data
-//@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@RequiredArgsConstructor
 @Builder
 @ToString
 public class Person {
