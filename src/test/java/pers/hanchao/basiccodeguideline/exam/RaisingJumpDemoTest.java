@@ -16,7 +16,7 @@ public class RaisingJumpDemoTest {
     @Test
     public void test1() {
         List<Integer> list = new ImmutableList.Builder<Integer>()
-                .add(0, 1, 1, 2, 3, 1, 1, 5)
+                .add(1, 1, 2, 3, 1, 1, 5)
                 .build();
 
         RaisingJump raisingJump = new RaisingJumpDemo();
