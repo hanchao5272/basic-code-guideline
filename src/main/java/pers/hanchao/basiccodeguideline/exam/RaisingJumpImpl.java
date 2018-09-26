@@ -6,16 +6,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <p>Description: </P>
+ * <p>Description: 多维跳跃器实现</P>
  *
  * @author hanchao
  * @date 2018/9/26 下午2:27
  */
-public class RaisingJumpDemo implements RaisingJump {
+public class RaisingJumpImpl implements RaisingJump {
     /**
      * 日志
      **/
-    private static final Logger logger = Logger.getLogger(RaisingJumpDemo.class);
+    private static final Logger logger = Logger.getLogger(RaisingJumpImpl.class);
+
+    /**
+     * <p>Description: 从第3维查找至第N维所需的最少步骤</p>
+     *
+     * @param list list.get(0)为第1维
+     * @return 从第3维查找至第N维所需的最少步骤
+     * @author hanchao
+     * @date 2018/9/26 下午6:35
+     */
+    @Override
+    public int raisingJump(List<Integer> list) {
+        return raisingJump(list, 3);
+    }
 
     /**
      * <p>Description: 跳维</p>
@@ -124,16 +137,5 @@ public class RaisingJumpDemo implements RaisingJump {
             //递归
             findMinStep(result, array, beginIndex, lastIndex + 1);
         }
-    }
-
-    /**
-     * <p>Description: 从第3维查找至第N维，list.get(0)为第1维</p>
-     *
-     * @author hanchao
-     * @date 2018/9/26 下午4:52
-     */
-    @Override
-    public int raisingJump(List<Integer> map) {
-        return raisingJump(map, 3);
     }
 }

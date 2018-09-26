@@ -7,18 +7,18 @@ import org.junit.Test;
 import java.util.List;
 
 /**
- * <p>Description: </P>
+ * <p>Description: 多维跳跃器测试</P>
  *
  * @author hanchao
  * @date 2018/9/26 下午4:46
  */
-public class RaisingJumpDemoTest {
+public class RaisingJumpTest {
 
     private RaisingJump raisingJump;
 
     @Before
     public void before() {
-        raisingJump = new RaisingJumpDemo();
+        raisingJump = new RaisingJumpImpl();
     }
 
     /**
