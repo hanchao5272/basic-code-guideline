@@ -179,13 +179,13 @@ public class RaisingJumpTest {
      */
     @Test
     public void test11ForLargeList() {
-        Integer[] largeArray = new Integer[10000000];
+        Integer[] largeArray = new Integer[1000000];
         for (int i = 0; i < largeArray.length; i++) {
             largeArray[i] = 1;
         }
 
         List<Integer> list = new ImmutableList.Builder<Integer>()
-                .add(1, 1, 2, 5, 4, 1, 1, 1, 2, 1, 1, 2, 1, 1, 3, 10000000, 1, 1, 1, 1)
+                .add(1, 1, 2, 5, 4, 1, 1, 1, 2, 1, 1, 2, 1, 1, 3, 1000000, 1, 1, 1, 1)
                 .add(largeArray)
                 .build();
 
@@ -200,9 +200,9 @@ public class RaisingJumpTest {
      */
     @Test
     public void test12ForLargeList() {
-        Integer[] largeArray = new Integer[10000000];
+        Integer[] largeArray = new Integer[1000000];
         for (int i = 0; i < largeArray.length; i++) {
-            largeArray[i] = RandomUtils.nextInt(1);
+            largeArray[i] = 1;
         }
         //
         largeArray[2] = 2;

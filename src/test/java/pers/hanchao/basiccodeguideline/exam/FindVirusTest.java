@@ -84,7 +84,7 @@ public class FindVirusTest {
      **/
     @Test
     public void test6ForBigList() {
-        Integer[] bigArray = new Integer[1000000];
+        Integer[] bigArray = new Integer[100000];
         for (int i = 0; i < bigArray.length; i++) {
             bigArray[i] = i;
         }
@@ -104,7 +104,7 @@ public class FindVirusTest {
      **/
     @Test
     public void test7ForBigList() {
-        Integer[] bigArray = new Integer[1000000];
+        Integer[] bigArray = new Integer[100000];
         for (int i = 0; i < bigArray.length; i++) {
             bigArray[i] = i;
         }
@@ -124,7 +124,7 @@ public class FindVirusTest {
      **/
     @Test
     public void test8ForBigList() {
-        Integer[] bigArray = new Integer[1000000];
+        Integer[] bigArray = new Integer[100000];
         for (int i = 0; i < bigArray.length; i++) {
             bigArray[i] = i;
         }
@@ -142,7 +142,7 @@ public class FindVirusTest {
      **/
     @Test
     public void test9ForBigList() {
-        Integer[] bigArray = new Integer[1000000];
+        Integer[] bigArray = new Integer[100000];
         for (int i = 0; i < bigArray.length; i++) {
             bigArray[i] = i;
         }

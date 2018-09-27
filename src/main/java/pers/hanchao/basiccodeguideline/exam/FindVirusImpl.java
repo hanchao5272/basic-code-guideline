@@ -23,6 +23,12 @@ public class FindVirusImpl implements FindVirus {
         if (target == null || target.isEmpty()) {
             return -1;
         }
+        System.out.println(target.size());
+        for (int i = 0; i < target.size() - 1; i++) {
+            System.out.print(target.get(i) + " ");
+        }
+        System.out.print(target.get(target.size() - 1));
+
         //排序
         target.sort(Integer::compareTo);
         //当前元素

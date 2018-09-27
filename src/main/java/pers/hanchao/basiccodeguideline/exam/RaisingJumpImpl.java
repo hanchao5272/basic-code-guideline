@@ -58,6 +58,8 @@ public class RaisingJumpImpl implements RaisingJump {
             int tempMaxIndex = 0;
             int minStep = 0;
             //显示当前维度转换器
+            logger.info(list.size());
+            logger.info(list);
             logger.info("跳跃过程：");
             for (int i = beginDimension - 1; i < list.size(); i++) {
                 if (i < list.size() - 1) {
