@@ -1,9 +1,6 @@
 package pers.hanchao.basiccodeguideline.exam;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * <p>Description: </P>
@@ -28,78 +25,23 @@ public class FindVirusImpl implements FindVirus {
         }
         //排序
         target.sort(Integer::compareTo);
-        //重复元素集合
-        List<RepeatedItem> repeatedItems = new ArrayList<>();
-        RepeatedItem tempItem = new RepeatedItem();
+        //当前元素
+        int currentValue = 0, currentCount = 0;
+
         for (int i = 0; i < target.size(); i++) {
-            tempItem.setValue(target.get(i));
             //有值累加
-            if (repeatedItems.contains(tempItem)) {
+            if (target.get(i) == currentValue) {
+                currentCount++;
                 //找到返回
-                if (repeatedItems.get(repeatedItems.indexOf(tempItem)).getCount() >= target.size() / 2) {
+                if (currentCount > target.size() / 2) {
                     return target.get(i);
-                } else {
-                    //没找到累加
-                    repeatedItems.get(repeatedItems.indexOf(tempItem)).increment();
                 }
             } else {
-                //无值新增
-                repeatedItems.add(new RepeatedItem(target.get(i), 1));
+                //当前值不满足需求，换下一个
+                currentValue = target.get(i);
+                currentCount = 1;
             }
         }
         return -1;
-    }
-
-    class RepeatedItem {
-        int value;
-        int count;
-
-        public RepeatedItem(int value, int count) {
-            this.value = value;
-            this.count = count;
-        }
-
-        public RepeatedItem() {
-
-        }
-
-        public void increment() {
-            count++;
-        }
-
-
-        public Integer getValue() {
-            return value;
-        }
-
-        public void setValue(Integer value) {
-            this.value = value;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) {
-                return true;
-            }
-            if (!(o instanceof RepeatedItem)) {
-                return false;
-            }
-            RepeatedItem that = (RepeatedItem) o;
-            return Objects.equals(getValue(), that.getValue());
-        }
-
-        @Override
-        public int hashCode() {
-
-            return Objects.hash(getValue());
-        }
     }
 }

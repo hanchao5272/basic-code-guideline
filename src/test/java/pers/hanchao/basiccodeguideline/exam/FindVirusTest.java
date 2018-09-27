@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <p>Description: </P>
+ * <p>Description: 查找中毒数组中的中毒元素</P>
  *
  * @author hanchao
  * @date 2018/9/27 上午10:23
@@ -25,7 +25,7 @@ public class FindVirusTest {
      * 空List
      **/
     @Test
-    public void test0ForEmptyList() {
+    public void test1ForEmptyList() {
         List<Integer> list = new ArrayList<>((new ImmutableList.Builder<Integer>().build()));
 
         assert -1 == findVirus.findVirus(list);
@@ -35,7 +35,7 @@ public class FindVirusTest {
      * 无结果
      **/
     @Test
-    public void test1ForNoResult() {
+    public void test2ForNoResult() {
         List<Integer> list = new ArrayList<>(new ImmutableList.Builder<Integer>()
                 .add(1, 2, 3)
                 .build());
@@ -47,7 +47,7 @@ public class FindVirusTest {
      * 无结果2
      **/
     @Test
-    public void test2ForNoResult2() {
+    public void test3ForNoResult2() {
         List<Integer> list = new ArrayList<>((new ImmutableList.Builder<Integer>()
                 .add(1, 1, 2, 2)
                 .build()));
@@ -59,7 +59,7 @@ public class FindVirusTest {
      * 有结果
      **/
     @Test
-    public void test3ForHasResult() {
+    public void test4ForHasResult() {
         List<Integer> list = new ArrayList<>((new ImmutableList.Builder<Integer>()
                 .add(1, 2, 2)
                 .build()));
@@ -71,7 +71,7 @@ public class FindVirusTest {
      * 有结果2
      **/
     @Test
-    public void test4ForHasResult2() {
+    public void test5ForHasResult2() {
         List<Integer> list = new ArrayList<>((new ImmutableList.Builder<Integer>()
                 .add(1, 2, 2, 2, 2, 1)
                 .build()));
@@ -80,11 +80,11 @@ public class FindVirusTest {
     }
 
     /**
-     * 大集合-百万-无结果
+     * 大集合-百万-重复值在前面-无结果
      **/
     @Test
-    public void test5ForBigList() {
-        Integer[] bigArray = new Integer[100000];
+    public void test6ForBigList() {
+        Integer[] bigArray = new Integer[1000000];
         for (int i = 0; i < bigArray.length; i++) {
             bigArray[i] = i;
         }
@@ -100,11 +100,11 @@ public class FindVirusTest {
     }
 
     /**
-     * 大集合-百万-有结果
+     * 大集合-百万-重复值在前面-有结果
      **/
     @Test
-    public void test6ForBigList() {
-        Integer[] bigArray = new Integer[100000];
+    public void test7ForBigList() {
+        Integer[] bigArray = new Integer[1000000];
         for (int i = 0; i < bigArray.length; i++) {
             bigArray[i] = i;
         }
@@ -120,11 +120,29 @@ public class FindVirusTest {
     }
 
     /**
-     * 大集合-百万
+     * 大集合-百万-重复值在后面-无结果
      **/
     @Test
-    public void test7ForBigList() {
-        Integer[] bigArray = new Integer[100000];
+    public void test8ForBigList() {
+        Integer[] bigArray = new Integer[1000000];
+        for (int i = 0; i < bigArray.length; i++) {
+            bigArray[i] = i;
+        }
+        for (int i = bigArray.length - 1; i > bigArray.length / 2 + 2; i--) {
+            bigArray[i] = 5;
+        }
+
+        List<Integer> list = new ArrayList<>(new ImmutableList.Builder<Integer>().add(bigArray).build());
+
+        assert -1 == findVirus.findVirus(list);
+    }
+
+    /**
+     * 大集合-百万-重复值在后面-有结果
+     **/
+    @Test
+    public void test9ForBigList() {
+        Integer[] bigArray = new Integer[1000000];
         for (int i = 0; i < bigArray.length; i++) {
             bigArray[i] = i;
         }
