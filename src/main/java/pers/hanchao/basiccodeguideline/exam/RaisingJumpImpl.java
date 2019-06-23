@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * <p>Description: 多维跳跃器实现</P>
+ * int raisingJump(List<Integer> map);
  *
  * @author hanchao
  * @date 2018/9/26 下午2:27
