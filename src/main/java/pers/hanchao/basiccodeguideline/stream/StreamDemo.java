@@ -1,9 +1,8 @@
 package pers.hanchao.basiccodeguideline.stream;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import com.google.common.collect.Lists;
+
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -142,11 +141,19 @@ public class StreamDemo {
 
         //关于null值和空数组
         System.out.println("关于null值和空数组");
-        Stream.of(null).forEach(System.out::println);
+//        Stream.of(null).forEach(System.out::println);
         Stream.of(Arrays.asList()).forEach(System.out::println);
 
         //split空值过滤
         List<Integer> statusList = Stream.of("1,2,3,,,2,,".split(",")).filter(s -> !s.equals("")).distinct().map(Integer::parseInt).collect(Collectors.toList());
         System.out.println(statusList);
+
+        //List to Map
+
+        List<Person> list4 = Lists.newArrayList(new Person("Jack",true,12),new Person("Tom",true,12));
+        Map<String,Person> map4 = list4.stream().collect(Collectors.toMap(Person::getName, (p) -> p));
+        map4.forEach((key,value) -> System.out.println(key + ":" + value.toString())
+        );
+
     }
 }
