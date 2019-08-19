@@ -9,7 +9,7 @@
         <Console name="Console" target="SYSTEM_OUT">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
             <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
-            <PatternLayout pattern="%5p traceId:%X{traceId} %c:%L - %m %throwable{separator( --> )}%n"/>
+            <PatternLayout pattern="%5p - %m %throwable{separator( --> )}%n"/>
         </Console>
         <!--异步日志配置，指向配置引用AppenderRef-->
         <Async name="ASYNC" bufferSize="262144" includeLocation="true">
