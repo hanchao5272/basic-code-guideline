@@ -8,6 +8,8 @@ import org.redisson.config.Config;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
 
+import java.io.IOException;
+
 /**
  * <p>Redis Pipeline Demo</P>
  *
@@ -15,7 +17,7 @@ import redis.clients.jedis.Pipeline;
  */
 @Slf4j
 public class RedisPipelineDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //连接redis
         Jedis jedis = new Jedis("10.126.42.16", 26379);
         //获取pipeline
