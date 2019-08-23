@@ -36,9 +36,9 @@
             <appender-ref ref="Console"/>
             <appender-ref ref="RollingFile"/>
         </root>
-        <!--<logger name="org.apache.kafka.clients" level="ERROR"/>-->
-        <!--<logger name="org.springframework" level="ERROR"/>-->
-        <!--<logger name="org" level="ERROR"/>-->
-        <!--<logger name="pers.hanchao.basiccodeguideline.kafka.KafkaTest" level="ERROR"/>-->
+        <logger name="org.apache.kafka.clients" level="ERROR"/>
+        <logger name="org.springframework" level="ERROR"/>
+        <logger name="org" level="ERROR"/>
+        <logger name="pers.hanchao.basiccodeguideline.kafka.KafkaTest" level="ERROR"/>
     </loggers>
 </configuration>

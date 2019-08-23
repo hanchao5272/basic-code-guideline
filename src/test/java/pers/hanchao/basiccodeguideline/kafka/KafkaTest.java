@@ -35,18 +35,23 @@ public class KafkaTest {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
+    /**
+     * 保证消息被处理完
+     */
     @After
     public void tearDown() throws Exception {
         Thread.sleep(5000);
     }
 
+    /**
+     * http get 请求 test 的简单封装
+     */
     public void simpleGet(String url) throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get(url))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print())
                 .andReturn().getResponse().getContentAsString();
     }
-    ///////////
 
     /**
      * 短信，一个分区，一个Consumer
@@ -55,7 +60,7 @@ public class KafkaTest {
      */
     @Test
     public void testForSimple() throws Exception {
-        simpleGet("/kafka/batch-send?topic=" + TOPIC_SMS + "&value=hello&batch=5");
+        simpleGet("/kafka/batch-send?topic=" + TOPIC_MAIL + "&value=hello&batch=5");
     }
 
     /**
