@@ -34,7 +34,7 @@
         <io.springfox.version>2.7.0</io.springfox.version>
         <joda-time.version>2.3</joda-time.version>
         <commons-configuration.version>1.10</commons-configuration.version>
-        <commons-io.version>2.4</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <jacoco.version>0.7.6.201602180812</jacoco.version>
         <kotlin.version>1.2.31</kotlin.version>
 
